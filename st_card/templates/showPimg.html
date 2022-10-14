@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    
+
+</head>
+<body>
+    <h1>Student Details</h1>
+    
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>COURSE</th>
+                <th>EMAIL</th>
+                <th>MOBILE No</th>
+                <th>GENDER</th>
+                <th>ADDRESS</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td><a href="{% url 'indi' student.id %}">{{ student.student_name }}</a></td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.mob }}</td>
+                <td>{{ student.gender }}</td>
+                <td>{{ student.adress }}</td>
+                <td><a href="{% url 'editpage' student.id  %}">Edit</a>
+                    <br>
+                    <a href="{% url 'deletepage' student.id  %}">Delete</a>
+                </td>
+        </tr>
+        {% endfor %} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <td> -->
+                    <!-- <img src="{{ student.image.url|default_if_none:'#' }}" width="100px" height="100px%"> -->
+                    <!-- <img src="{{ student.image.url }}" width="100px" height="100px%">
+                    </td> -->
+                    
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Student Card</title>
+    <style>
+        div {
+            background-color: rosybrown;
+            width: 100px;
+            padding: 5px;
+            margin: 40px;
+            color: maroon;
+            font-family: cursive;
+            }
+        body{
+
+        background-color: mistyrose;
+        }
+        h1{
+            color: darkred;
+            
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <h1><center><i>Student Details</i></center></h1>
+    <div class="container-fluid" style="width: 400px" class="inset">
+        <br>
+        <label>Name : </label>
+        <label>{{ students.student_name }}</label>
+        <br>
+        <label>Course :</label>
+        <label>{{ students.course }}</label>
+        <br>
+        <label>E-mail :</label>
+        <label>{{ students.email }}</label>
+        <br>
+        <label>Mob :</label>
+        <label>{{ students.mob }}</label>
+        <br>
+        <label>Gender :</label>
+        <label>{{ students.gender }}</label>
+        <br>
+        <label>Address:</label>
+        <label>{{ students.adress }}</label>
+        <br>
+        <br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    h1{
+        background-color: rgb(142, 30, 119);
+        padding: 10px;
+        width: 100%;
+    }
+     #sub{
+    
+        color: white;
+        text-align: center;
+        background-color: navy;
+    }
+        .add{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: navy;
+        background-color: lavender;
+        padding: 85px;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+</style>
+<body>
+    <div class="add">
+    <h1>
+        Update Details
+    </h1>
+    <form method="post" action="/edit_student_details/{{ students.pk }}" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+        <label>Student Name:</label>
+        <input type="text" name="student_name" value="{{ students.student_name }}"><br>
+        <label>Course:</label>
+        <input type="text" name="course" value="{{ students.course }}"><br>
+        <label>Email:</label>
+        <input type="text" name="email" value="{{ students.email }}"><br>
+        <label>Mobile No:</label>
+        <input type="number" name="mob" value="{{ students.mob }}"><br>
+        <label>Gender:</label>
+        <input type="text" name="gender" value="{{ students.gender }}"><br>
+        <label>Address:</label>
+        <input type="text" name="adress" value="{{ students.adress }}"><br>
+        <button type="submit" id="sub">Update</button>
+        
+        <input type=button value="Previous Page" onClick="javascript:history.go(-1);">
+    </form>
+    </div>
+</body>
+</html>
